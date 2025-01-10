@@ -5,8 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font :pixelsize=15:antialias=true:autohint=true";
-static char *font2[] = { "FiraCode Nerd Font :pixelsize=15:antialias=true:autohint=true" };
+/*static char *font = "JetBrains Mono Nerd Font :pixelsize=15:antialias=true:autohint=true";*/
+static char *font = "JetBrains Mono Nerd Font:pixelsize=15:antialias=true:autohint=true";
+/*static char *font2[] = { "JetBrains Mono Nerd Font :pixelsize=15:antialias=true:autohint=true, DejaVu Sans :pixelsize=15" };*/
+static char *font2[] = { "DejaVu Sans :pixelsize=15:antialias=true" };
 static int borderpx = 10;
 
 /* try to enable UNICODE */
