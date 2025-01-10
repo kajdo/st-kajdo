@@ -7,7 +7,10 @@
  */
 static char *font = "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true";
 static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true" };
-static int borderpx = 0;
+static int borderpx = 10;
+
+/* try to enable UNICODE */
+#define UNICODE_SUPPORT 1
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -85,7 +88,7 @@ const int boxdraw = 1;
 const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 1;
+const int boxdraw_braille = 0;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -138,7 +141,8 @@ static const char *colorname[] = {
   /* more colors can be added after 255 to use with DefaultXX */
   "#add8e6", /* 256 -> cursor */
   "#555555", /* 257 -> rev cursor*/
-  "#282828", /* 258 -> bg */
+  /*"#282828", /* 258 -> bg */
+  "#000000", /* 258 -> bg */
   "#ffffff", /* 259 -> fg */
 };
 
@@ -261,8 +265,8 @@ static Shortcut shortcuts[] = {
   { ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
   { ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
   { XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-  { MODKEY,              XK_comma,       zoom,           {.f = +1} },
-  { MODKEY,              XK_period,        zoom,           {.f = -1} },
+  { ControlMask,              XK_plus,       zoom,           {.f = +1} },
+  { ControlMask,              XK_minus,        zoom,           {.f = -1} },
   { MODKEY,               XK_g,        zoomreset,      {.f =  0} },
   { ControlMask | ShiftMask,               XK_C,           clipcopy,       {.i =  0} },
   { ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
